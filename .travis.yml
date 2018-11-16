@@ -1,0 +1,25 @@
+sudo: required
+dist: trusty 
+language: php
+
+#->versi php
+php: 
+    - 7.1
+ 
+#-> branch yang digunakan
+branches:
+    only:
+    - master #-> QA/Staging server
+    - develop #-> DevSever
+    
+# install environment di os
+
+before_install:
+    -curl -l0 https://strorage.googleapis.com/kubernates-release/release/$(curl -s https://strorage.googleapis.com/kubernates-release/release/stable.txt)/bin/linux/amd64/kuberctl
+    -chmod +x ./kubectl #permission
+    -sudo mv .kubectl/usr/local/bin/kubectl
+# precompile
+before_script:
+
+#main execution (build)
+script:
