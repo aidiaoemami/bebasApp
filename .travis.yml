@@ -19,6 +19,7 @@ before_install:
     -chmod +x ./kubectl #permission
     -sudo mv .kubectl/usr/local/bin/kubectl
 # precompile
+#
 before_script:
 
 #main execution (build)
